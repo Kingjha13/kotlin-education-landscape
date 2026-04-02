@@ -3,7 +3,6 @@ import matplotlib.pyplot as plt
 
 df = pd.read_csv("../data/universities.csv")
 
-# Clean column names
 df.columns = df.columns.str.strip()
 
 print("Total courses:", len(df))
@@ -20,12 +19,10 @@ print(df["subject_area"].value_counts())
 print("\nTeaching styles:")
 print(df["teaching_style"].value_counts())
 
-# Graph 1: Countries
 df["country"].value_counts().plot(kind="bar")
 plt.title("Kotlin Courses by Country")
 plt.show()
 
-# Graph 2: Subject Areas
 df["subject_area"].value_counts().plot(kind="bar")
 plt.title("Kotlin Subject Areas")
 plt.show()
